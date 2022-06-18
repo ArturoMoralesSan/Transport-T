@@ -56,6 +56,14 @@
         }
     });
 </script> 
-<style scoped>
+<style scoped lang="scss">
+ion-content {
+  --background: none;
+  background-image: url("../theme/fondo.jpg") !important;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
 
 </style>

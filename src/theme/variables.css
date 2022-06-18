@@ -233,8 +233,4 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-card-background: #1e1e1e;
   }
-
-  .background {
-    background-image: url("../../public/assets/img/fondo.jpg");
-  }
 }

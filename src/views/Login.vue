@@ -1,8 +1,8 @@
 <template>
     <ion-page>
-        <ion-content  :fullscreen="true">
+        <ion-content class="background"  :fullscreen="true">
         <img src="/assets/img/favicon.png" style="width: 170px;margin: 0 auto;display: block;" alt="">
-        <div class="background">
+        <div>
             <ion-card>
                 <ion-card-header>
                     <ion-card-title class="ion-text-center">Iniciar sesión</ion-card-title>
@@ -52,6 +52,14 @@
         }
     });
 </script> 
-<style scoped>
+<style scoped lang="scss">
+ion-content {
+  --background: none;
+  background-image: url("../theme/fondo.jpg") !important;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
 
 </style>
