@@ -5,6 +5,7 @@ import LoginPage from '../views/Login.vue'
 import RegisterPage from '../views/Register.vue'
 import MonederoPage from '../views/Monedero.vue'
 import RecargarPage from '../views/Recarga.vue'
+import RecorridosPage from '../views/Recorridos.vue'
 
 
 const routes = [
@@ -41,6 +42,11 @@ const routes = [
     path: '/recargar',
     name: 'recargar',
     component: RecargarPage
+  },
+  {
+    path: '/recorridos',
+    name: 'recorridos',
+    component: RecorridosPage
   }
 ]
 

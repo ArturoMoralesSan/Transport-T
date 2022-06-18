@@ -33,7 +33,7 @@
                                 </div>
 
                                 <div class="ion-text-center" style="margin-bottom:10px;">
-                                    <ion-button @click="login" color="light">Mis recorridos</ion-button>
+                                    <ion-button @click="recorridos" color="light">Mis recorridos</ion-button>
                                 </div>
                             </div>
                             
@@ -65,6 +65,10 @@
         methods: {
             recargar: function() {
                 window.location.href = 'http://localhost:8100/recargar';
+            },
+
+            recorridos: function() {
+                window.location.href = 'http://localhost:8100/recorridos';
             },
 
             openMenu(){
