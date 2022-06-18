@@ -26,7 +26,7 @@
                     
                     <div style="display: flex;align-items: center;justify-content: center; flex-direction: column;">
                         <div class="ion-text-center" style="width:100%;margin-bottom:10px;">
-                            <ion-button style="width:100%;" @click="openModal" color="light">Tarjeta de debito</ion-button>
+                            <ion-button style="width:100%;" @amount="addData" @click="openModal" color="light">Tarjeta de debito</ion-button>
                         </div>
                         <div class="ion-text-center" style="margin-bottom:50px;">
                             <ion-button @click="login" color="primary">Confirmar recarga</ion-button>
@@ -59,23 +59,26 @@
                 money: 125,
             }
         },
-        setup() {
-            const openModal = async () => {
-            const modal = await modalController.create({
-                component: Modal, //Modal is name of the component to render inside ionic modal
-            });
-            return modal.present();
-            };
-
-            return { openModal };
-        },
+        
         methods: {
+            openModal: async function() {
+                const modal = await modalController.create({
+                    component: Modal, //Modal is name of the component to render inside ionic modal
+                    parent: this,
+                });
+
+                await modal.present();
+                let response = await modal.onDidDismiss();
+                console.log(response.data.amount)
+                this.money = this.money + parseInt(response.data.amount);
+                
+            },
             login: function() {
-                window.location.href = 'http://localhost:8100';
+                window.location.href = 'http://'+location.host +'';
             },
             openMenu(){
                 menuController.open("app-menu")
-            }
+            },
         }
     });
 </script> 

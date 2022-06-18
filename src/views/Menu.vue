@@ -8,12 +8,12 @@
         <ion-content id="contentmenu">
             <ion-list>
                 <ion-item>
-                  <a class="menuitem" href="http://localhost:8100/monedero">Mi saldo</a>
+                  <a class="menuitem" :href="'http://'+host+'/monedero'">Mi saldo</a>
                   </ion-item>
-                <ion-item><a class="menuitem" href="http://localhost:8100/recargar">Recargar</a></ion-item>
-                <ion-item><a class="menuitem" href="http://localhost:8100/">Ver rutas</a></ion-item>
-                <ion-item><a class="menuitem" href="http://localhost:8100/">Mi perfil</a></ion-item>
-                <ion-item><a class="menuitem"  href="http://localhost:8100/iniciar-sesion">Cerrar sesión</a></ion-item>
+                <ion-item><a class="menuitem" :href="'http:'+host +'/recargar'">Recargar</a></ion-item>
+                <ion-item><a class="menuitem" :href="'http:'+host +''">Ver rutas</a></ion-item>
+                <ion-item><a class="menuitem" :href="'http:'+host +''">Mi perfil</a></ion-item>
+                <ion-item><a class="menuitem"  :href="'http:'+host +'/iniciar-sesion'">Cerrar sesión</a></ion-item>
             </ion-list>
         </ion-content>
     </ion-menu>
@@ -27,6 +27,11 @@ export default ({
   components: {
     IonMenu,IonHeader,IonContent,IonToolbar,IonTitle,IonItem,IonList,
   },
+  data: function(){
+    return {
+       host: location.host
+    }
+  }
   
 });
 </script>

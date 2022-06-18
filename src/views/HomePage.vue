@@ -20,7 +20,7 @@ export default defineComponent({
   name: 'HomePage',
   mounted() {
 		setTimeout(() => {
-      window.location.href = 'http://localhost:8100/iniciar-sesion';
+      window.location.href = 'http://'+location.host+'/iniciar-sesion';
     }, 900);
 	},
   

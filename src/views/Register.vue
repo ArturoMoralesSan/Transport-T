@@ -17,10 +17,10 @@
                         <ion-input placeholder="Correo electrónico"></ion-input>
                     </ion-item>
                     <ion-item style="margin-bottom: 15px;">
-                        <ion-input placeholder="Contraseña"></ion-input>
+                        <ion-input type="password" placeholder="Contraseña"></ion-input>
                     </ion-item>
                     <ion-item style="margin-bottom: 15px;">
-                        <ion-input placeholder="Confirmar contraseña"></ion-input>
+                        <ion-input type="password" placeholder="Confirmar contraseña"></ion-input>
                     </ion-item>
                     <div class="ion-text-center" style="margin-bottom:10px;">
                         <ion-button @click="login" color="primary">Registrar</ion-button>
@@ -51,7 +51,7 @@
         },
         methods: {
             login: function() {
-                window.location.href = 'http://localhost:8100/iniciar-sesion';
+                window.location.href = 'http://'+location.host +'/iniciar-sesion';
             }
         }
     });

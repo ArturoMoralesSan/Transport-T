@@ -81,7 +81,7 @@
         
         methods: {
             login: function() {
-                window.location.href = 'http://localhost:8100';
+                window.location.href = 'http://'+location.host +'';
             },
             openMenu(){
                 menuController.open("app-menu")

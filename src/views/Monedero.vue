@@ -64,11 +64,11 @@
         },
         methods: {
             recargar: function() {
-                window.location.href = 'http://localhost:8100/recargar';
+               window.location.href = 'http://'+location.host +'/recargar';
             },
 
             recorridos: function() {
-                window.location.href = 'http://localhost:8100/recorridos';
+                window.location.href = 'http://'+location.host +'/recorridos';
             },
 
             openMenu(){

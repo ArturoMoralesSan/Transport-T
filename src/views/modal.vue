@@ -6,7 +6,7 @@
   </ion-header>
   <ion-content class="ion-padding">
     <ion-item>
-        $ <ion-input placeholder="  Cantidad a recargar"></ion-input>
+        $ <ion-input placeholder="  Cantidad a recargar" name="mount" v-model="mount"></ion-input>
     </ion-item>
     <ion-item>
         <ion-input placeholder="Nombre completo"></ion-input>
@@ -38,18 +38,23 @@ import {
   IonToolbar,
   IonButton,
   modalController,
+  IonInput
 } from "@ionic/vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "ModalItem",
-  components: { IonContent, IonHeader, IonTitle, IonToolbar, IonButton },
-  setup() {
-    const closeModal = () => {
-      modalController.dismiss();
+  components: { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonInput },
+  data(){
+    return {
+      'mount': ''
     };
-
-    return { closeModal };
   },
+  methods : {
+    closeModal : function() {
+      console.log(this.mount)
+      modalController.dismiss({ amount: this.mount });
+    }
+  }
 });
 </script>

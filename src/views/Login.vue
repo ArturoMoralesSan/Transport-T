@@ -14,7 +14,7 @@
                     </ion-item>
 
                      <ion-item style="margin-bottom: 15px;">
-                        <ion-input placeholder="Contraseña"></ion-input>
+                        <ion-input type="password" placeholder="Contraseña"></ion-input>
                     </ion-item>
                     <div class="ion-text-center" style="margin-bottom:10px;">
                         <ion-button @click="login" color="primary">Iniciar sesión</ion-button>
@@ -23,7 +23,7 @@
                         <a href="#">¿Olvidó su contraseña?</a>
                     </p>
                     <p class="ion-text-center" style="margin-bottom:10px;">
-                        <a href="http://localhost:8100/registro">¿No tiene cuenta? ¡Regístrese!</a>
+                        <a :href="'http://'+host+'/registro'">¿No tiene cuenta? ¡Regístrese!</a>
                     </p>
                 </ion-card-content>
             </ion-card>
@@ -43,11 +43,13 @@
             IonPage,
         },
         data: function() {
-            return {}
+            return {
+                host: location.host
+            }
         },
         methods: {
             login: function() {
-                window.location.href = 'http://localhost:8100/monedero';
+                window.location.href = 'http://'+this.host +'/monedero';
             }
         }
     });
