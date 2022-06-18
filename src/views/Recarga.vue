@@ -2,7 +2,7 @@
     <ion-page>
         <ion-content  :fullscreen="true">
             <div style="display:flex;justify-content:center;align-items: center;">
-                <ion-button @click="openMenu()" expand="full">Menu</ion-button>
+                <img src="/assets/img/menu.png" @click="openMenu()" style="cursor: pointer; width: 45px;padding-left: 15px;">
                 <img src="/assets/img/favicon.png" style="width: 60px;margin-left: auto;display: block;" alt="">
             </div>         
             <div class="background">

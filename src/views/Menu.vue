@@ -7,11 +7,13 @@
         </ion-header>
         <ion-content id="contentmenu">
             <ion-list>
-                <ion-item>Mi saldo</ion-item>
-                <ion-item>Recargar</ion-item>
-                <ion-item>Ver rutas</ion-item>
-                <ion-item>Mi perfil</ion-item>
-                <ion-item>Cerrar sesión</ion-item>
+                <ion-item>
+                  <a class="menuitem" href="http://localhost:8100/monedero">Mi saldo</a>
+                  </ion-item>
+                <ion-item><a class="menuitem" href="http://localhost:8100/recargar">Recargar</a></ion-item>
+                <ion-item><a class="menuitem" href="http://localhost:8100/">Ver rutas</a></ion-item>
+                <ion-item><a class="menuitem" href="http://localhost:8100/">Mi perfil</a></ion-item>
+                <ion-item><a class="menuitem"  href="http://localhost:8100/iniciar-sesion">Cerrar sesión</a></ion-item>
             </ion-list>
         </ion-content>
     </ion-menu>
@@ -28,3 +30,10 @@ export default ({
   
 });
 </script>
+<style>
+.menuitem{
+
+    text-decoration: none;
+    color: #858282;
+  }
+</style>
