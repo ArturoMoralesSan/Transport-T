@@ -23,7 +23,7 @@
                         <a href="#">¿Olvidó su contraseña?</a>
                     </p>
                     <p class="ion-text-center" style="margin-bottom:10px;">
-                        <a href="#">¿No tiene cuenta? ¡Regístrese!</a>
+                        <a href="http://localhost:8100/registro">¿No tiene cuenta? ¡Regístrese!</a>
                     </p>
                 </ion-card-content>
             </ion-card>
@@ -47,7 +47,7 @@
         },
         methods: {
             login: function() {
-                window.location.href = 'http://localhost:8100';
+                window.location.href = 'http://localhost:8100/monedero';
             }
         }
     });

@@ -1,27 +1,9 @@
 <template>
     <ion-app>
         <ion-page>
-            <ion-menu side="start" menu-id="first" content-id="main">
-                <ion-header>
-                    <ion-toolbar color="primary">
-                        <ion-title>Start Menu</ion-title>
-                    </ion-toolbar>
-                </ion-header>
-                <ion-content id="contentmenu">
-                    <ion-list>
-                        <ion-item>Menu Item</ion-item>
-                        <ion-item>Menu Item</ion-item>
-                        <ion-item>Menu Item</ion-item>
-                        <ion-item>Menu Item</ion-item>
-                        <ion-item>Menu Item</ion-item>
-                    </ion-list>
-                </ion-content>
-            </ion-menu>
-            <ion-router-outlet id="main">
-            
-            </ion-router-outlet>
             <ion-content  :fullscreen="true">
-                <div>
+                <div style="display:flex;justify-content:center;align-items: center;">
+                    <ion-button @click="openMenu()" expand="full">Menu</ion-button>
                     <img src="/assets/img/favicon.png" style="width: 60px;margin-left: auto;display: block;" alt="">
                 </div> 
                 <div class="background">
@@ -43,7 +25,7 @@
                                 </ion-card-content>
                             </ion-card>
                             <div class="ion-text-center" style="margin-bottom:50px;">
-                                <ion-button @click="login" color="primary">Recargar</ion-button>
+                                <ion-button @click="recargar" color="primary">Recargar</ion-button>
                             </div>
                             <div style="display: flex;align-items: center;justify-content: center; flex-direction: column;">
                                 <div class="ion-text-center" style="width:100%;margin-bottom:10px;">
@@ -67,12 +49,13 @@
 </template> 
 <script>
     import { IonPage } from '@ionic/vue';
+    import {menuController} from "@ionic/vue";
     import { defineComponent } from 'vue';
 
     export default defineComponent({
         name: 'RegisterPage',
         components: {
-            IonPage,
+            IonPage
         },
         data: function() {
             return {
@@ -80,8 +63,12 @@
             }
         },
         methods: {
-            login: function() {
-                window.location.href = 'http://localhost:8100';
+            recargar: function() {
+                window.location.href = 'http://localhost:8100/recargar';
+            },
+
+            openMenu(){
+                menuController.open("app-menu")
             }
         }
     });

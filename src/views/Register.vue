@@ -1,7 +1,7 @@
 <template>
     <ion-page>
         <ion-content  :fullscreen="true">
-        <img src="/assets/img/favicon.png" style="width: 60px;margin-left: auto;display: block;" alt="">
+        <img src="/assets/img/favicon.png" style="width: 170px;margin: 0 auto;display: block;" alt="">
         <div class="background">
             <ion-card>
                 <ion-card-header>
@@ -51,7 +51,7 @@
         },
         methods: {
             login: function() {
-                window.location.href = 'http://localhost:8100';
+                window.location.href = 'http://localhost:8100/iniciar-sesion';
             }
         }
     });

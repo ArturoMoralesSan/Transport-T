@@ -1,8 +1,11 @@
 <template>
     <ion-page>
         <ion-content  :fullscreen="true">
-        <img src="/assets/img/favicon.png" style="width: 60px;margin-left: auto;display: block;" alt="">
-        <div class="background">
+            <div style="display:flex;justify-content:center;align-items: center;">
+                <ion-button @click="openMenu()" expand="full">Menu</ion-button>
+                <img src="/assets/img/favicon.png" style="width: 60px;margin-left: auto;display: block;" alt="">
+            </div>         
+            <div class="background">
             <ion-card>
                 <ion-card-header>
                     <ion-card-title class="ion-text-center">Recargar</ion-card-title>
@@ -23,7 +26,7 @@
                     
                     <div style="display: flex;align-items: center;justify-content: center; flex-direction: column;">
                         <div class="ion-text-center" style="width:100%;margin-bottom:10px;">
-                            <ion-button style="width:100%;" @click="login" color="light">Tarjeta de debito</ion-button>
+                            <ion-button style="width:100%;" @click="openModal" color="light">Tarjeta de debito</ion-button>
                         </div>
                         <div class="ion-text-center" style="margin-bottom:50px;">
                             <ion-button @click="login" color="primary">Confirmar recarga</ion-button>
@@ -40,7 +43,10 @@
     </ion-page>
 </template> 
 <script>
-    import { IonPage } from '@ionic/vue';
+    import { IonPage,  modalController, } from '@ionic/vue';
+    import {menuController} from "@ionic/vue";
+    import Modal from "./modal.vue";
+
     import { defineComponent } from 'vue';
 
     export default defineComponent({
@@ -53,9 +59,22 @@
                 money: 125,
             }
         },
+        setup() {
+            const openModal = async () => {
+            const modal = await modalController.create({
+                component: Modal, //Modal is name of the component to render inside ionic modal
+            });
+            return modal.present();
+            };
+
+            return { openModal };
+        },
         methods: {
             login: function() {
                 window.location.href = 'http://localhost:8100';
+            },
+            openMenu(){
+                menuController.open("app-menu")
             }
         }
     });
